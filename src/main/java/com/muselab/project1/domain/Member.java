@@ -1,9 +1,6 @@
-package com.muselab.project1;
+package com.muselab.project1.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by 1002428 on 16. 1. 3..
@@ -21,13 +18,18 @@ public class Member {
 
     private int age;
 
+    @ManyToOne
+    @JoinColumn(name="teamCode")
+    private Team team;
+
     public Member() {
     }
 
-    public Member(Long id, String name, int age) {
+    public Member(Long id, String name, int age, Team team) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.team = team;
     }
 
     public Long getId() {
@@ -52,5 +54,13 @@ public class Member {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 }

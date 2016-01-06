@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @Configuration
-//@EnableJpaRepositories("com.muselab.project1")
+@EnableJpaRepositories("com.muselab.project1.repository")
 public class SpringbootJpa1Application {
 
 	public static void main(String[] args) {

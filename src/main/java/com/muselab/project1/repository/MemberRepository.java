@@ -1,7 +1,7 @@
-package com.muselab.project1;
+package com.muselab.project1.repository;
 
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import com.muselab.project1.domain.Member;
+import com.muselab.project1.domain.Team;
 import org.springframework.data.repository.Repository;
 
 import java.util.List;
@@ -18,4 +18,6 @@ public interface MemberRepository extends Repository<Member,Long> {
 //    public List<Member> findByLikeName(String name);
 
     public void save(Member member);
+
+//    public void save(Team team);
 }
